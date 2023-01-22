@@ -1,0 +1,187 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[8pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[english]{babel}
+\usepackage{amssymb,amsthm,amsmath}
+%\usepackage{xltxtra}
+%\usepackage{stmaryrd}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usetikzlibrary{decorations.pathmorphing,positioning}
+\usepackage[explicit]{titlesec}
+
+\graphicspath{ {./images/} }
+
+\definecolor{universityred}{RGB}{147,25,50}
+\definecolor{complementaryb}{RGB}{25,147,122}
+\definecolor{complementaryo}{RGB}{246,152,84}
+\definecolor{complementaryg}{RGB}{110,147,25}
+
+\lstset{
+	extendedchars=true,
+	showstringspaces=false,
+	escapeinside=``,
+	keywordstyle=\color{blue},
+	commentstyle=\color[rgb]{0.133,0.545,0.133},
+	columns=flexible,
+	language=python,
+	tabsize=2,
+	basicstyle=\normalsize\selectfont\ttfamily,
+	numbers=left,
+	frame=lines,
+	breaklines=true
+}
+\geometry{
+	left=25mm,
+	right=25mm,
+	top=15mm,
+	bottom=15mm
+}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\counterwithin{figure}{section}
+
+
+
+
+
+%%%%%%NOUVELLES COMMANDES
+\newcommand{\rules}[1]{\textcolor{universityred}{#1}}
+\newcommand{\problem}[1]{\section{#1}}
+\newcommand{\psettings}[3]{
+    \begin{tcolorbox}[colback=pink!25!white,colframe=black!25]
+    \begin{center}
+        \begin{tabularx}{0.9\textwidth} { 
+            || >{\centering\arraybackslash}X 
+            | >{\centering\arraybackslash}X 
+            | >{\centering\arraybackslash}X || }
+            \hline
+            Problem ID & Judges & Time Limit\\
+            \hline
+            #1 &  #2 & #3\\
+            \hline
+        \end{tabularx}
+    \end{center}
+    \end{tcolorbox}
+}
+\newcommand{\ppart}[1]{\leavevmode \newline \noindent\textbf{\LARGE \textcolor{universityred}{#1}}\newline} %%%%PROBLEM PARTS
+\newcommand{\psubpart}[1]{\leavevmode \newline \noindent\textbf{\Large \textcolor{universityred}{#1}}\newline} %%%%PROBLEM SUBPARTS
+\newcommand{\bO}[1]{\ensuremath{\mathcal{O}(#1)}}
+
+\newcommand{\inout}[1]{
+    \begin{tcolorbox}[sharp corners,colback=white,colframe=gray]
+        \begin{verbatim}
+            #1
+        \end{verbatim}
+    \end{tcolorbox}
+}
+
+%%%%%%FIN NOUVELLES COMMANDES
+
+
+
+\titleformat{\section}[hang]{\Large\bfseries\sffamily}%
+{\rlap{\color{universityred}\rule[-6pt]{\textwidth}{1.2pt}}\colorbox{universityred}{%
+           \raisebox{0pt}[13pt][3pt]{ \makebox[100pt]{% height, width
+                \fontfamily{phv}\selectfont\color{white}{\thesection}}
+            }}}%
+{15pt}%
+{ \color{universityred}PROBLEM : #1
+%
+}
+\titlespacing*{\section}{0pt}{3mm}{5mm}
+
+
+
+\begin{document}
+
+
+
+
+
+
+%%%%%%PAGE DE COUVERTURE
+    \begin{titlepage}
+        \input{titlepage/titlepage.tex}
+    \end{titlepage}
+%%%%%%FIN PAGE DE COUVERTURE
+
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+    
+
+
+%%%%%%REGLES DU CONCOURS
+    \input{rules/rules.tex}
+%%%%%%FIN REGLE DU CONCOURS
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+%%%%%%PROBLEME 1
+    \input{problems/problem1/problem1}
+%%%%%%FIN PROBLEME 1
+
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+
+%%%%%%PROBLEME 2
+    \input{problems/problem2/problem2}
+%%%%%%FIN PROBLEME 2
+
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+%%%%%%PROBLEME 3
+    \input{problems/problem3/problem3}
+%%%%%%FIN PROBLEME 3
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+
+%%%%%%PROBLEME 4
+    \input{problems/problem4/problem4}
+%%%%%%FIN PROBLEME 4
+
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+%%%%%%PROBLEME 5
+    \input{problems/problem5/problem5}
+%%%%%%FIN PROBLEME 5
+
+%%%%%%PAGE DE SEPARATION
+    \input{titlepage/blankpage.tex}
+%%%%%%PAGE DE SEPARATION
+
+%%%%%%PROBLEME 6
+    \input{problems/problem6/problem6}
+%%%%%%FIN PROBLEME 6
+    
+%%%%%%DERNIERE PAGE
+    \input{titlepage/endpage}
+%%%%%%DERNIERE PAGE FIN
+    
+\end{document}

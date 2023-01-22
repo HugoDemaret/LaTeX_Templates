@@ -1,0 +1,94 @@
+
+
+\mode<presentation>
+
+
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}[scale=1]
+  \useasboundingbox[fill=SiteWhite] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  %%%%%%TOP
+  %\draw[step=1,gray,thin] (0,0) grid (15,10);
+  \begin{scope}
+      \fill[color=SiteBlue, rounded corners] (0,4)  -- (1,4) -- (1,10) -- (0,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (1.05,6)  -- (2.05,6) -- (2.05,10) -- (1.05,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (2.1,7.5)  -- (3.1,7.5) -- (3.1,10) -- (2.1,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (3.15,8.5)  -- (4.15,8.5) -- (4.15,10) -- (3.15,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (4.2,9)  -- (5.2,9) -- (5.2,10) -- (4.2,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (5.25,9.25)  -- (6.25,9.25) -- (6.25,10) -- (5.25,10) -- cycle;
+      \fill[color=SiteBlue, rounded corners] (6.3,9.35)  -- (7.3,9.35) -- (7.3,10) -- (6.3,10) -- cycle;
+  \end{scope}
+  %%%%%BOTTOM
+  \begin{scope}[yscale=-1,xscale=-1,xshift=-\the\paperwidth,yshift=-\the\paperheight]
+    \fill[color=SiteBlue, rounded corners] (0,4)  -- (1,4) -- (1,10) -- (0,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (1.05,6)  -- (2.05,6) -- (2.05,10) -- (1.05,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (2.1,7.5)  -- (3.1,7.5) -- (3.1,10) -- (2.1,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (3.15,8.5)  -- (4.15,8.5) -- (4.15,10) -- (3.15,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (4.2,9)  -- (5.2,9) -- (5.2,10) -- (4.2,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (5.25,9.25)  -- (6.25,9.25) -- (6.25,10) -- (5.25,10) -- cycle;
+    \fill[color=SiteBlue, rounded corners] (6.3,9.35)  -- (7.3,9.35) -- (7.3,10) -- (6.3,10) -- cycle;
+  \end{scope}
+   %%%%%%GREEN LINES
+  \begin{scope}[every node/.style={},every edge/.style={draw,line width = 4pt}]
+    \node (a) at (0,0) {};
+    \node (b) at (3,1.2) {};
+    \node (c) at (9,7.5) {};
+    \node (d) at (5,1) {};
+    \node (e) at (1,3) {};
+    \node (f) at (10,9) {};
+    \node (g) at (3.3,5) {};
+    \node (h) at (7,8) {};
+    \node (i) at (9,5) {};
+    \node (j) at (9.75,4) {};
+    \node (k) at (4.65,7.87) {};
+    \node (l) at (3.75,3.75) {};
+    \node (m) at (8,2) {};
+    \path (a.center) edge[color=SiteGreen,dashed] (b.center);
+    \path (b.center) edge[color=SiteGreen] (e.center);
+    \path (b.center) edge[color=SiteGreen] (d.center);
+    \path (e.center) edge[color=SiteGreen] (g.center);
+    \path (f.center) edge[color=SiteGreen] (h.center);
+    \path (g.center) edge[color=SiteGreen,dashed] (h.center);
+    \path (h.center) edge[color=SiteGreen] (c.center);
+    \path (e.center) edge[color=SiteGreen,dashed] (l.center);
+    \path (g.center) edge[color=SiteGreen] (k.center);
+    \path (c.center) edge[color=SiteGreen,dashed] (i.center);
+    \path (i.center) edge[color=SiteGreen] (j.center);
+    \path (d.center) edge[color=SiteGreen,dashed] (m.center);
+  \end{scope}
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{Lovelace}[1][]
+{ 
+   \vfill%
+   \begin{center}
+   ~
+        \begin{beamercolorbox}[wd=10cm,center,shadow=true,rounded=true,sep=8pt,#1]{TitleColour}
+          \usebeamerfont{title}\inserttitle\par%
+        \end{beamercolorbox}%
+    ~
+    \end{center}
+    \begin{center}
+    ~
+        \begin{beamercolorbox}[wd=10cm,center,shadow=true,rounded=true,sep=8pt,#1]{}
+          \usebeamerfont{author}\insertauthor%
+        \end{beamercolorbox}
+    ~
+    \end{center}
+    \begin{center}
+    ~
+        \begin{beamercolorbox}[wd=10cm,center,shadow=true,rounded=true,sep=8pt,#1]{}
+          \usebeamerfont{author}\insertdate%
+        \end{beamercolorbox}
+    ~
+    \end{center}
+  \vfill
+}
+
+\mode
+<all>

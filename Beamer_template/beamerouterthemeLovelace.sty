@@ -1,0 +1,59 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{Lovelace}[1][]
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+  \begin{tikzpicture}
+  \useasboundingbox[fill=SiteWhite] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[SiteBlue, rounded corners] (0,0) rectangle(2.95,1.2);
+  \fill[SiteGreen,rounded corners] (3.05,0) rectangle(\the\paperwidth,1.2);
+   \ifx\insertframesubtitle\@empty%
+      {\node[anchor=west, white,font=\large] at (3.2,0.61){\insertframetitle};
+        \node[anchor=west, white, font=\large] at (1.25,0.61){\textcolor{SiteWhite}{\insertsectionnumber}};
+      }
+      \else%
+      {\node[anchor= west, white,font=\large] at (3.2,0.81){\insertframetitle};%
+       \node[anchor= west, white,font=\small] at (3.2,0.41){\insertframesubtitle};
+        \node[anchor=west, white, font=\large] at (1.25,0.61){\textcolor{SiteWhite}{\insertsectionnumber}};
+      }%
+      \fi
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+
+\defbeamertemplate*{footline}{Lovelace}
+{
+    \ifnum \insertpagenumber=1
+      \leavevmode%
+      \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{}%
+        % empty environment to raise height
+      \end{beamercolorbox}}%
+      \vskip0pt%
+    \else
+      \leavevmode%
+      \hbox{%
+      \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.75\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~}
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,rightskip=2ex,sep=0pt]{page number in head/foot}%
+        \hfill%
+        \usebeamerfont{page number in head/foot}%
+        \insertpagenumber{}%
+        \hfill%
+        \usebeamercolor[fg]{page number in head/foot}%
+        \usebeamerfont{page number in head/foot}%
+        \usebeamertemplate{page number in head/foot}%
+      \end{beamercolorbox}}%
+      \vskip0pt%
+  \fi
+}
+
+
+
+\mode<all>

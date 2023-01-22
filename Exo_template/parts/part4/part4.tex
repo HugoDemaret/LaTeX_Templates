@@ -1,0 +1,71 @@
+\section{Algorithme de Wigderson}
+
+\setcounter{subsection}{12}
+
+Considérons un graphe $G$ avec $n$ sommets. Supposons que $G$ soit 3-coloriable, mais que l’on
+ait cette information sans pour autant effectivement disposer d’un 3-coloriage de $G$. Trouver un
+3-coloriage de $G$ pourrait prendre un temps exponentiel en n.
+L’algorithme de Wigderson permet, pour un graphe $G$ supposé 3-coloriable, de trouver en
+temps polynomial en $n$ un coloriage de $G$ avec $\comp{\sqrt{n}}$ couleurs (au sens où il existe $C > 0$ tel
+que pour tout $n$ suffisamment grand, ce coloriage ait au plus $C\sqrt{n}$ couleurs). Cet algorithme repose sur la propriété suivante : 
+
+
+\subsection{}
+Soit $k>0$. Montrons que si $G$ est $(k+1)-$coloriable, alors pour tout sommet $s$ de $G$, le sous-graphe induit par $V(s)$ est $k-$coloriable.\\
+Tout d'abord, rappelons la définition de sous-graphe induit.
+\\
+\begin{definition}[Sous-graphe induit]
+    \'Etant donné un graphe $G = \brac{S,A}$, le sous-graphe induit $G^\prime$ par un ensemble de sommets $T \subset S$ est $G^\prime = \brac{T, A \cap (T \times T)}$.
+\end{definition}
+\noindent
+Comme $G$ est colorié, les voisins de $s$ n'ont pas la même couleur que $s$. Autrement dit, le sous-graphe induit $G^\prime$ ne possède aucun sommets de la même couleur que $s$. Donc $G^\prime$ est $k-$coloriable.
+
+\subsection{}
+
+\textbf{Algorithme de Wigderson :}\\
+Voici le principe de l’algorithme de Wigderson. Soit $G$ un graphe à $n$ sommets, et tel que $G$
+est 3-coloriable.
+\begin{enumerate}
+    \item On se donne comme couleur initiale $c = 0$.
+    \item Pour chaque sommet s de G pas encore colorié et ayant au moins $\sqrt{n}$ voisins pas encore
+coloriés :
+    \begin{enumerate}
+        \item On $2-$colorie, avec les couleurs $c$ et $c + 1$, le sous-graphe induit par l’ensemble des voisins
+de $s$ pas encore coloriés.
+        \item On incrémente $c$ du nombre de couleurs utilisées en (a).
+    \end{enumerate}
+    \item Enfin, on utilise l’algorithme glouton (avec un ordre de numérotation quelconque) pour
+colorier, avec des couleurs supérieures ou égales à $c$, le sous-graphe induit par l’ensemble des
+sommets pas encore coloriés.
+\end{enumerate}
+
+Montrons que l’algorithme de Wigderson appliqué à un graphe 3-coloriable construit toujours un coloriage, et que ce coloriage utilise un nombre de couleur en $\comp{\sqrt{n}}$,
+où $n$ est le nombre du sommets du graphe.\\
+
+(i)
+Tout d'abord, commençons par montrer que l'algorithe renvoie bien un coloriage. L'algorithme de Wigderson utilise un algorithme de $2-$coloriage et un algorithme glouton. Comme démontré préalablement, ces deux algorithmes sonts corrects. 
+De plus, les sous-graphes induits considérés sont coloriés avec des ensembles disjoints de couleurs.
+Donc l'algorithme renvoie bien un coloriage.\\
+
+(ii)
+Soit $k$ le nombre de sommets traité en 2. Alors l'algorithme colorie au moins $k\times \sqrt{n}$ sommets.
+Nous avons donc 
+\begin{align*}
+    k\sqrt{n} &\leq n\\
+    \iff k &\leq \sqrt{n} 
+\end{align*}
+Le nombre de couleurs utilisées au point 2 est donc au plus $2\sqrt{n}$. Le degré du sous-graphe induit à la fin du point 2 est $\sqrt{n}-1$ (question 4.13). L'algorithme glouton utilise donc au plus $\sqrt{n}$ couleurs pour colorier les sommets restants. Dans le pire cas, on a donc $3\sqrt{n}$ couleurs utilisées, donc $\comp{\sqrt{n}}$ couleurs.
+
+\subsection{}
+\lstinputlisting{parts/annexe/code/algorithmedewigderson_15.cpp}
+
+\subsection{}
+\lstinputlisting{parts/annexe/code/algorithmedewigderson_16.cpp}
+
+\subsection{}
+\lstinputlisting{parts/annexe/code/algorithmedewigderson_17.cpp}
+
+\subsection{}
+\lstinputlisting{parts/annexe/code/algorithmedewigderson_18.cpp}
+
+\subsection{}

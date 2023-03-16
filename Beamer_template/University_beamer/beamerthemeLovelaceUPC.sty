@@ -1,0 +1,102 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{shapes.misc, positioning}
+
+
+% Settings
+\useinnertheme{LovelaceUPC}
+\useoutertheme{LovelaceUPC}
+\usecolortheme{LovelaceUPC}
+
+
+% Colours
+
+\definecolor{SiteBack}{HTML}{070818}
+\definecolor{SiteBlue}{HTML}{14192F}
+\definecolor{SiteGrey}{HTML}{777983}
+\definecolor{SiteGreen}{HTML}{118352}
+\definecolor{SiteLime}{HTML}{5CEE69}
+\definecolor{SiteWhite}{HTML}{E7EAEF}
+\definecolor{SiteLightGrey}{HTML}{dddddd}
+
+\definecolor{Ured}{HTML}{8a1538}
+\definecolor{UBlack}{HTML}{292929}
+\definecolor{DarkRed}{HTML}{6F112D}
+
+\setbeamercolor{TitleColour}{fg=black,bg=SiteLightGrey}
+\setbeamercolor*{palette primary}{fg=UBlack,bg=SiteLightGrey!50!white}
+\setbeamercolor*{palette secondary}{fg=UBlack,bg=SiteLightGrey}
+\setbeamercolor*{palette tertiary}{bg=UBlack,fg=white}
+\setbeamercolor*{item}{fg=Ured}
+\setbeamercolor{background canvas}{parent=SiteLightGrey}
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{page number in head/foot}{parent=palette primary}
+\setbeamercolor{section in toc}{fg=black}
+
+
+%%%%CONFIG
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+
+%%%%TRANSPARENT MODE
+\setbeamercovered{transparent} 
+
+
+
+%%%%%RENEW THEOREM
+
+\makeatletter
+\def\renewtheorem#1{%
+  \expandafter\let\csname#1\endcsname\relax
+  \expandafter\let\csname c@#1\endcsname\relax
+  \gdef\renewtheorem@envname{#1}
+  \renewtheorem@secpar
+}
+\def\renewtheorem@secpar{\@ifnextchar[{\renewtheorem@numberedlike}{\renewtheorem@nonumberedlike}}
+\def\renewtheorem@numberedlike[#1]#2{\newtheorem{\renewtheorem@envname}[#1]{#2}}
+\def\renewtheorem@nonumberedlike#1{  
+\def\renewtheorem@caption{#1}
+\edef\renewtheorem@nowithin{\noexpand\newtheorem{\renewtheorem@envname}{\renewtheorem@caption}}
+\renewtheorem@thirdpar
+}
+\def\renewtheorem@thirdpar{\@ifnextchar[{\renewtheorem@within}{\renewtheorem@nowithin}}
+\def\renewtheorem@within[#1]{\renewtheorem@nowithin[#1]}
+\makeatother
+
+
+
+
+%%%%%THEOREM STYLES
+
+
+
+\makeatletter
+\def\th@theorem{%
+    \normalfont % body font
+    \setbeamercolor{block title example}{bg=Ured,fg=SiteWhite}
+    \setbeamercolor{block body example}{bg=Ured!30!white!30,fg=UBlack}
+    \def\inserttheoremblockenv{exampleblock}
+ }
+\makeatother
+
+\makeatletter
+\def\th@proof{%
+    \normalfont % body font
+    \setbeamercolor{block title example}{bg=Ured,fg=SiteWhite}
+    \setbeamercolor{block body example}{bg=Ured!30!white!30,fg=black}
+    \def\inserttheoremblockenv{exampleblock}
+ }
+\makeatother
+ 
+\theoremstyle{theorem}
+\renewtheorem{theorem}{Theorem}[section]
+\theoremstyle{proof}
+\renewtheorem{proof}{Proof.}[section]
+
+
+\mode<all>

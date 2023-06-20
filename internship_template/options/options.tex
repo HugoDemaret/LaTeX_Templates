@@ -1,0 +1,83 @@
+\usepackage[a4paper]{geometry}
+\usepackage[english]{babel}
+\usepackage{amssymb,amsthm,amsmath,amsfonts}
+%\usepackage{xltxtra}
+%\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[list=true,listformat=simple]{subcaption}
+\usepackage{color}
+\usepackage{fancyhdr,lastpage}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor= black}
+\usepackage[maxcitenames=50, mincitenames=4,maxbibnames=99,minbibnames=99,backend=biber]{biblatex}
+\pagestyle{fancy}
+\usepackage[Glenn]{fncychap}
+\usepackage{chngcntr}
+\usepackage[explicit]{titlesec}
+\usepackage{mdframed}
+\usepackage{appendix}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{matrix,positioning,arrows.meta,arrows}
+
+%%%%%%%%%%%%%%
+
+
+
+\graphicspath{ {./images/} }
+
+%Couleurs custom (ne pas changer)
+\definecolor{universityred}{RGB}{147,25,50}
+\definecolor{complementaryb}{RGB}{25,147,122}
+\definecolor{complementaryo}{RGB}{246,152,84}
+\definecolor{complementaryg}{RGB}{110,147,25}
+\definecolor{asgreen}{RGB}{0,128,0}
+\definecolor{universitycomp}{RGB}{45,121,32}
+\definecolor{nicered}{rgb}{647,129,149}
+\definecolor{logoback}{HTML}{1e1e1e}
+
+
+
+
+\lstset{
+	extendedchars=true,
+	showstringspaces=false,
+	escapeinside=``,
+	keywordstyle=\color{blue},
+	commentstyle=\color[rgb]{0.133,0.545,0.133},
+	columns=flexible,
+    %%Pour changer le langage de programmation : 
+	language=python,
+	tabsize=2,
+	basicstyle=\normalsize\selectfont\ttfamily,
+	numbers=left,
+	frame=lines,
+	breaklines=true
+}
+
+\geometry{
+	left=25mm,
+	right=25mm,
+	top=15mm,
+	bottom=15mm
+}
+\usepackage{multicol}
+\usetikzlibrary{shadows}
+\usepackage{menukeys}
+\setlength{\columnsep}{1cm}
+\input{options/algoconfig.tex}
+\input{options/commands.tex}
+
+\pgfplotsset{width=7cm,compat=1.9}
+
+
+
+
+
+

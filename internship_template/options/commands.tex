@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%LISTE DE COMMANDES%%%%%%%%
+
+%%Commande pour modifier l'environnement
+
+
+%Commande pour la complexité (moyenne puis pire des cas)
+\newcommand{\comptab}[2]{\textcolor{complementaryg}{\textbf{Complexité moyenne : }$\mathcal{O}(#1)$} \hspace{0.5cm} \textcolor{universityred}{\textbf{Complexité maximale : }$\mathcal{O}(#2)$}}
+%Commande pour grand O
+\newcommand{\comp}[1]{$\mathcal{O}(#1)$}
+%Ensembles :
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\G}[0]{\mathcal{G}}
+\newcommand{\M}[0]{\mathcal{M}}
+\newcommand{\A}[0]{\mathcal{A}}
+\newcommand{\T}[0]{\mathcal{T}}
+\newcommand{\U}[0]{\mathcal{U}}
+\newcommand{\I}[0]{\mathcal{I}}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\nor}[0]{\mathrm{norm}}
+\newcommand{\norm}[1]{\mathrm{norm}(#1)}
+\newcommand{\argmax}[0]{\mathrm{argmax}}
+\newcommand{\argmin}[0]{\mathrm{argmin}}
+
+
+
+%Commande pour insérer du code (ici en C++)
+\newcommand{\code}[1]{\scriptsize \lstinputlisting{#1}}
+
+
+%Commandes pour les algorithmes en pseudocode
+
+%Probabilities
+\newcommand{\prob}[1]{\mathrm{Pr}(#1)}
+
+%Commandes pour 
+
+%Theoreme
+\newtheorem{theorem}{\bf Theorem}[section]
+\newtheorem{lemma}{\bf Lemma}[section]
+\newtheorem{corollary}{\bf Corollary}[section]
+\newtheorem{proposition}{\bf Proposition}[section]
+\newtheorem{definition}{\bf Definition}[section]
+\newtheorem{example}{\bf Example}[section]
+
+
+%Commandes pour les environnements personnels
+\newcommand{\review}[1]{\textcolor{universityred}{#1 -- REVIEW}}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{\Huge TODO : #1}}}
+
+% cref mais avec le titre de la section de destination
+% Permet de voir de quoi ça parle pour se dire si oui ou non on veut aller lire la ref 
+\newcommand{\niceref}[1]{\cref{#1} -- \nameref{#1}}

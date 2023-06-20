@@ -1,0 +1,46 @@
+\documentclass[11pt]{report}
+%%%%%%NE PAS TOUCHER%%%%%%%%%%%%%%%
+\input{options/options.tex}      %%
+\input{options/style}            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addbibresource{bibliography/bibtex.bib}
+\begin{document}
+
+
+%%%TITLEPAGE
+\input{titlepage/titlepage.tex}
+
+
+
+
+
+
+
+%%%TOC
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Summary}
+\tableofcontents
+\newpage
+%%%ENDTOC
+
+\input{titlepage/blankpage}
+
+
+
+
+
+
+
+\listoffigures
+\listoftables
+
+\input{titlepage/blankpage}
+
+\printbibliography
+
+%%%FIN
+\input{titlepage/endpage}
+
+
+\end{document}

@@ -1,0 +1,14 @@
+%  Theorem  env  (for  the  exercices)
+\theoremstyle{exercice}
+\newtheorem{exercice}{Exercice}
+\theoremstyle{question}
+\newtheorem{question}{Question}[exercice]
+\theoremstyle{correction}
+\newtheorem{correction}{Correction --  Question}[exercice]
+%  Commands
+\newcommand{\indic}[1]{\textcolor{green}{#1 (ssi précisé)}}
+
+
+% IFTHEN
+% show correction : 1
+\newcommand{\showproblems}{0}

@@ -1,0 +1,52 @@
+\geometry{
+     a4paper,
+     total={170mm,257mm},
+     left=20mm,
+     top=20mm,
+ }
+
+%%%%% STYLE THEOREM
+% Style  exercice  :
+\newtheoremstyle{exercice}% 
+{7pt}
+{7pt}
+{\rmfamily}
+{}
+{\rmfamily \bfseries  \Large}
+{}
+{\newline}
+{}
+% Style  question :
+\newtheoremstyle{question}% 
+{5pt}
+{5pt}
+{\rmfamily}
+{}
+{\rmfamily \bfseries  \large}
+{}
+{\newline}
+{}
+% Style correction  question
+\newtheoremstyle{correction}% 
+{3pt}
+{3pt}
+{\rmfamily  \color{red}}
+{}
+{\rmfamily \bfseries  \large \color{red}}
+{}
+{\newline}
+{}
+
+
+
+\fancypagestyle{exam}{
+    \fancyhf{}
+    \lhead{Examen}
+    \rhead{Examen  -- Année scolaire}
+    \lfoot{Département -- Niveau}
+    \rfoot{Page \thepage\ sur \pageref{LastPage}}
+    \setlength\headheight{16pt}
+    \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+\pagestyle{exam}
